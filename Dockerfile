@@ -1,4 +1,9 @@
-FROM ubuntu:18.04
+# Remove all stopped Docker containers:   sudo docker rm $(sudo docker ps -a -q)
+# Remove all untagged images:             sudo docker rmi $(sudo docker images -q --filter "dangling=true")
+
+# My NVIDIA driver supports only cuda <= 9.0
+# FROM nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 SHELL ["/bin/bash", "-c"]
 
